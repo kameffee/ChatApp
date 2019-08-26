@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   # 一覧表示
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
   end
 
   # 詳細表示
