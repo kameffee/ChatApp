@@ -8,4 +8,9 @@ class PostsController < ApplicationController
   def show
     @post = Post.find_by(id: params[:id])
   end
+
+  # 新規投稿
+  def new
+    
+  end
 end
