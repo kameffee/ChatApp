@@ -30,9 +30,12 @@ class PostsController < ApplicationController
     @post = Post.find_by(id: params[:id])
     # 更新
     @post.content = params[:content]
-    @post.save
-    # リダイレクト
-    redirect_to("/posts/index")
+    if @post.save
+      # リダイレクト
+      redirect_to("/posts/index")
+    else
+      render("posts/edit")
+    end
   end
 
   # 削除
