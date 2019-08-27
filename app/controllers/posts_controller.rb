@@ -11,14 +11,17 @@ class PostsController < ApplicationController
 
   # 新規投稿
   def new
-    
+    @post = Post.new()
   end
 
   def create
     @post = Post.new(content: params[:content])
-    @post.save
-    # リダイレクト
-    redirect_to("/posts/index")
+    if @post.save
+      # リダイレクト
+      redirect_to("/posts/index")
+    else
+      render("posts/new")
+    end
   end
 
   def edit
