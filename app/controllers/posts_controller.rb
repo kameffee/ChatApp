@@ -24,4 +24,15 @@ class PostsController < ApplicationController
   def edit
     @post = Post.find_by(id: params[:id])
   end
+
+  def update
+    # 取得
+    @post = Post.find_by(id: params[:id])
+    # 更新
+    @post.content = params[:content]
+    @post.save
+    # リダイレクト
+    redirect_to("/posts/index")
+  end
+
 end
