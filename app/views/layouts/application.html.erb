@@ -26,6 +26,12 @@
           <%= link_to("NewPost", "/posts/new")%>
         </li>
       </ul>
+
+      <% if flash[:notice] %>
+        <div class="flash">
+          <%= flash[:notice] %>
+        </div>
+      <% end %>
     </header>
     
     <%= yield %>
