@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'users/index'
+
   get 'posts/index' => 'posts#index'
   get 'posts/new' => 'posts#new'
   get 'posts/:id' => 'posts#show'
@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get 'about' => 'home#about'
   
   get 'users/index' => 'users#index'
+  get 'users/:id' => 'users#show'
 end
