@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'signup' => 'users#new'
 
   get 'posts/index' => 'posts#index'
   get 'posts/new' => 'posts#new'
