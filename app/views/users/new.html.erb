@@ -2,13 +2,15 @@
   <div class="container">
     <div class="form-heading">新規ユーザー登録</div>
     <div class="form users-form">
-      <div class="form-body">
-        <p>ユーザー名</p>
-        <input>
-        <p>メールアドレス</p>
-        <input>
-        <input type="submit" value="新規登録">
-      </div>
+        <%= form_tag("/users/create") do %>
+            <div class="form-body">
+                <p>ユーザー名</p>
+                <input name="name">
+                <p>メールアドレス</p>
+                <input name="email">
+                <input type="submit" value="新規登録">
+            </div>
+        <% end %>
     </div>
   </div>
 </div>
