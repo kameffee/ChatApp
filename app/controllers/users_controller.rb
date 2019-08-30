@@ -17,4 +17,8 @@ class UsersController < ApplicationController
     redirect_to("/users/#{@user.id}")
   end
 
+  def edit
+    @user = User.find_by(id: params[:id])
+  end
+
 end
