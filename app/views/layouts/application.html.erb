@@ -28,12 +28,19 @@
         <li>
           <%= link_to("Users", "/users/index") %>
         </li>
+        <% if session[:user_id] %>
+          <li>
+            <%= session[:user_id] %>
+          </li>
+        <% else %>
         <li>
           <%= link_to("Sign up", "/signup") %>
         </li>
         <li>
           <%= link_to("Login", "/login") %>
         </li>
+        <% end %>
+        
       </ul>
 
       <% if flash[:notice] %>

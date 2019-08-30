@@ -53,6 +53,9 @@ class UsersController < ApplicationController
 
     if @user
       flash[:notice] = "ログインしました"
+
+      session[:user_id] = @user.id
+
       redirect_to("/posts/index")
     else
       @error_message = "メールアドレスまたはパスワードが間違っています"
