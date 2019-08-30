@@ -28,6 +28,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
+
+    # アイコンの保存
+    if params[:image]
+      image = params[:image]
+      @user.image_name = "#{@user.id}.jpg"
+      File.binwrite("public/user_image/#{@user.id}.jpg", image.read)
+    end
+
     if @user.save
       flash[:notice] = "編集に成功しました"
       redirect_to("/users/#{@user.id}")
