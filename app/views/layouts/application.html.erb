@@ -20,7 +20,7 @@
           <%= link_to("index", "/posts/index") %>
         </li>
 
-        <% if session[:user_id] %>
+        <% if @current_user %>
           <li>
             <%= link_to("Users", "/users/index") %>
           </li>
@@ -28,7 +28,7 @@
             <%= link_to("NewPost", "/posts/new")%>
           </li>
           <li>
-            <%= session[:user_id] %>
+            <%= link_to(@current_user.name, "/users/#{@current_user.id}") %>
           </li>
           <li>
             <%= link_to("logout", "/logout", {method: :post}) %>
