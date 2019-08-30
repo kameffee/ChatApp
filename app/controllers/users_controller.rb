@@ -43,5 +43,8 @@ class UsersController < ApplicationController
       render("users/edit")
     end
   end
+  
+  def login
+  end
 
 end
