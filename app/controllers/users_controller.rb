@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, {only: [:index, :update, :edit, :update]}
+
   def index
     @users = User.all
   end
