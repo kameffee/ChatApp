@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   # 詳細表示
   def show
     @post = Post.find_by(id: params[:id])
-    @user = User.find_by(id: @post.user_id)
+    @user = @post.user
   end
 
   # 新規投稿
