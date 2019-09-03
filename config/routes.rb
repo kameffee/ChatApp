@@ -12,6 +12,9 @@ Rails.application.routes.draw do
   post 'posts/:id/update' => 'posts#update'
   post 'posts/:id/destroy' => 'posts#destroy'
   
+  post 'likes/:post_id/create' => 'likes#create'
+  post 'likes/:post_id/destroy' => 'likes#destroy'
+  
   get '/' => 'home#top'
   
   get 'about' => 'home#about'
@@ -21,4 +24,5 @@ Rails.application.routes.draw do
   post 'users/create' => 'users#create'
   get 'users/index' => 'users#index'
   get 'users/:id' => 'users#show'
+  get 'users/:id/likes' => 'users#likes'
 end
