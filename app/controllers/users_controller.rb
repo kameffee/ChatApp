@@ -62,9 +62,9 @@ class UsersController < ApplicationController
 
   # ログイン処理
   def login
-    @user = User.find_by(email: params[:email], password: params[:password])
+    @user = User.find_by(email: params[:email])
 
-    if @user
+    if @user && @user.authenticate(params[:password])
       flash[:notice] = "ログインしました"
 
       session[:user_id] = @user.id
